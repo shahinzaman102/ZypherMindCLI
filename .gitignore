@@ -1,0 +1,15 @@
+# Environment variables
+.env
+
+# Deno lock and config files (optional to ignore, depending if you want them in repo)
+deno.lock
+
+# Local configuration or caches
+.zypher
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
