@@ -52,7 +52,7 @@ Once running, the terminal interface allows you to:
 
 ## Try Different Tasks
 
-* What are the benefits of using AI agents?
-* Write a hello world program in TypeScript
-* List the pros and cons of different programming languages
+* Write a short motivational message for a startup team using bullet points.
+* Rewrite the motivational message in a humorous tone and limit it to 3 bullets.
+* Use Firecrawl to crawl <https://openai.com/research> and extract titles of the most recent research updates.
 * etc.
