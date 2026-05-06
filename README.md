@@ -1,16 +1,22 @@
 # Quick Start
 
-Get Zypher Agent from [https://zypher.corespeed.io/](https://zypher.corespeed.io/), an open-source AI-agent framework/SDK within the CoreSpeed platform for building production-ready autonomous agents. This guide will help you get a Zypher Agent running in under 5 minutes.
+Get Zypher Agent from [https://zypher.corespeed.io/](https://zypher.corespeed.io/), an open-source AI-agent framework/SDK within the CoreSpeed platform for building production-ready autonomous agents.
+
+This project uses the **Zypher Agent framework** to build a **CLI-based AI Assistant that is agent-ready by design**. While the current implementation focuses on fast, lightweight text-based interaction, the architecture is intentionally extensible, making it easy to evolve into a fully autonomous agent with advanced capabilities in the future.
+
+This guide will help you get your CLI AI Assistant running in under 5 minutes.
 
 ## Prerequisites
 
 * **Deno 2.0+** – install from <https://docs.deno.com/runtime/getting_started/installation/>
 * **API Keys**
   * Gemini API Key – <https://aistudio.google.com/>
+    * **Note:** To retrieve the model name for Gemini, click on the Key listing and copy the cURL quickstart.
   * Firecrawl API Key – <https://www.firecrawl.dev/>
-    * Gemini serves as an example LLM server.
+  
+  **Note:**
+    * Gemini serves as the example LLM server.
     * Firecrawl serves as an example MCP server for web crawling.
-  * **Note:** To retrieve the model name for Gemini, click on the Key listing and copy the cURL quickstart.
 
 ## Step 1: Clone the Project
 
@@ -32,9 +38,9 @@ FIRECRAWL_API_KEY=your_firecrawl_api_key_here
 
 Install the Deno VSCode extension from <https://deno.land>. This provides a language server client for Deno.
 
-## Step 4: Run Your Agent
+## Step 4: Run Your Assistant
 
-Start your agent using:
+Start your CLI AI Assistant using:
 
 ```bash
 deno run -A main.ts
@@ -50,7 +56,7 @@ Once running, the terminal interface allows you to:
 
 ## Try Different Tasks
 
-After your agent is running, you can experiment with:
+After your assistant is running, you can experiment with:
 
 * Write a short motivational message for a startup team using bullet points.
 * Rewrite the motivational message in a humorous tone and limit it to 3 bullets.
@@ -59,9 +65,21 @@ After your agent is running, you can experiment with:
 
 ## About Feature Coverage
 
-ZypherMindCLI focuses on the core capabilities best supported by the **free-tier Gemini API**: text generation and reasoning. These features match the project's goal of providing a lightweight, CLI-driven AI agent experience.
+ZypherMindCLI is currently a **CLI AI Assistant,** not a fully autonomous agent yet.
 
-For a complete list of Gemini API features and their potential usage, see the official documentation: [Gemini API What's Next](https://ai.google.dev/gemini-api/docs/quickstart#what's-next).
+However, it is built using the **Zypher Agent framework,** making it:
+
+* **Agent-ready**
+* **Modular and extensible**
+* **Designed for future upgrades into a full AI agent system**
+
+The current implementation focuses on the **core strengths of the free-tier Gemini API:**
+
+* Fast text generation
+* Built-in reasoning capabilities
+* Lightweight CLI interaction
+
+**Note:** For a complete list of Gemini API features and their potential usage, see the official documentation: [Gemini API What's Next](https://ai.google.dev/gemini-api/docs/quickstart#what's-next).
 
 ### Gemini API Feature Coverage in ZypherMindCLI
 
@@ -70,14 +88,59 @@ For a complete list of Gemini API features and their potential usage, see the of
 * **Thinking / Reasoning** – Automatically leveraged by Gemini models.
 
 **Available in Gemini, Not Implemented in This Project:**
-* **Image Generation** – Not added because CLI cannot display images.
-* **Image Understanding (Vision)** – Not added because CLI does not handle image inputs.
-* **Function Calling** – Optional; can be added later for complex agent tool orchestration.
-* **Long Context** – Free-tier context window is limited; not needed for CLI.
-* **Embeddings** – Not added; used mainly for RAG or search systems, outside this project's scope.
 
-These advanced features can be implemented if you:
-* Upgrade your Gemini API plan, **or**
-* Want the agent to support richer capabilities beyond the CLI environment.
+* Image Generation
+* Image Understanding (Vision)
+* Function Calling
+* Long Context
+* Embeddings
 
-For most CLI-based use cases, the current implementation is optimal—simple, fast, and aligned with the strengths of the free-tier Gemini models.
+These features are intentionally not included to keep the CLI experience simple and efficient.
+
+## Future Scope (Planned but Not Implemented)
+
+The project is designed to evolve into a full autonomous agent system. Planned features include:
+
+### 1. Function Calling & Task Automation (Core Agent Capability)
+
+* Execute system commands
+* Create and edit files
+* Call external APIs
+
+### 2. Tool Integration
+
+* CLI tools
+* Web search
+* External services
+
+### 3. Memory & Embeddings
+
+* Store past interactions
+* Enable long-term memory and recall
+
+### 4. Multimodal Inputs
+
+* Accept PDFs, images, and other file types
+
+### 5. Image Capabilities
+
+* Image generation
+* Visual understanding (vision models)
+
+
+## Design Philosophy
+
+ZypherMindCLI follows a progressive enhancement approach:
+
+* Start simple → CLI-based assistant
+* Stay fast → optimized for free-tier APIs
+* Scale later → evolve into a full agent system
+
+This makes it ideal for:
+
+* Developers exploring AI agents
+* Rapid prototyping
+* Learning agent architecture
+* Building production-ready systems incrementally
+
+For most CLI-based use cases, the current implementation is simple, fast, and well-aligned with the strengths of the free-tier Gemini models.
